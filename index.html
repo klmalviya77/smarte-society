@@ -4,18 +4,67 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GateGuard - Smart Society Security</title>
+
+  <!-- Sirf ek <title> — pehle do the (FIX) -->
+  <title>GateGuard - Smart Society Management System</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="GateGuard - Smart Society Management System">
+  <meta name="description" content="Secure your society with GateGuard. Real-time visitor tracking, VVIP passes, and staff attendance management right from your phone.">
+  <meta name="keywords" content="society management, visitor management system, gateguard, smart society, gate security">
+
+  <!-- Canonical URL (FIX: pehle nahi tha) -->
+  <link rel="canonical" href="https://gateguards.netlify.app/">
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4f46e5">
+
+  <!-- Apple Touch Icon (FIX: pehle nahi tha) -->
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/input.css">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gateguards.netlify.app/">
+  <meta property="og:title" content="GateGuard - Smart Society Management">
+  <meta property="og:description" content="Real-time visitor tracking, VVIP passes, and staff attendance for modern societies.">
+  <meta property="og:image" content="https://gateguards.netlify.app/assets/social-banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="GateGuard - Smart Society Management">
+  <meta property="twitter:description" content="Real-time visitor tracking, VVIP passes, and staff attendance.">
+  <meta property="twitter:image" content="https://gateguards.netlify.app/assets/social-banner.png">
 
   <!-- External Libraries -->
+  <!-- SystemJS: SPCK Editor me TypeScript ko browser me run karne ke liye zaroori -->
   <script src="//unpkg.com/systemjs@0.19.47/dist/system.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome (FIX: integrity hash add kiya — CDN tamper protection) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
 </head>
 <body class="bg-slate-50 font-sans antialiased text-slate-900">
+
+  <!-- JS disabled users ke liye fallback (FIX: pehle blank page tha) -->
+  <noscript>
+    <div style="font-family: Arial, sans-serif; text-align: center; padding: 60px 20px;">
+      <h1 style="color: #1e293b;">JavaScript Required</h1>
+      <p style="color: #64748b;">GateGuard requires JavaScript to run. Please enable it in your browser settings.</p>
+    </div>
+  </noscript>
+
   <script src="config.js"></script>
+
 </body>
 </html>
