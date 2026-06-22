@@ -10,7 +10,6 @@ import { StaffAttendancePage } from './pages/StaffAttendancePage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 import { RefundPolicyPage } from './pages/RefundPolicyPage';
-import { ManageStaffPage } from './pages/ManageStaffPage';
 import { SupabaseService } from './services/SupabaseService';
 
 // Global Error Handler & UI Toast System
