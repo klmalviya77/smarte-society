@@ -157,7 +157,7 @@ function requireFeature(planType: string, feature: string, callback: () => void)
 // FIX: Session expire ho toh auto login page pe redirect
 function setupAuthListener(): void {
     const client = SupabaseService.getClient();
-    client.auth.onAuthStateChange((event) => {
+    client.auth.onAuthStateChange((event: string) => {
         if (event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
             if (event === 'SIGNED_OUT') {
                 showHomePage();
@@ -559,8 +559,8 @@ function showAddFlatsPage(societyId: string): void {
     const radioButtons  = document.getElementsByName('flatMode');
     const autoSection   = document.getElementById('autoSection');
     const manualSection = document.getElementById('manualSection');
-    radioButtons.forEach((radio) => {
-        radio.addEventListener('change', (e) => {
+    radioButtons.forEach((radio: EventTarget) => {
+        radio.addEventListener('change', (e: Event) => {
             const target = e.target as HTMLInputElement;
             if (target.value === 'auto') {
                 autoSection!.style.display   = 'block';
@@ -589,7 +589,7 @@ function showAddFlatsPage(societyId: string): void {
         } else {
             const manualText = (document.getElementById('manualFlats') as HTMLTextAreaElement).value;
             if (!manualText.trim()) return showToast('Enter at least one flat', 'error');
-            manualText.split('\n').forEach(line => {
+            manualText.split('\n').forEach((line: string) => {
                 if (line.trim()) flatsToInsert.push({ society_id: societyId, flat_number: line.trim() });
             });
         }
@@ -717,7 +717,7 @@ function showManageStaffPage(societyId: string): void {
     document.body.appendChild(modal);
 
     document.getElementById('modalCloseBtn')!.onclick = () => modal.remove();
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+    modal.addEventListener('click', (e: Event) => { if (e.target === modal) modal.remove(); });
     document.getElementById('modalPrintBtn')!.onclick = () => window.print();
 
     document.getElementById('modalDownloadBtn')!.onclick = () => {
@@ -915,7 +915,7 @@ async function showManageResidentsPage(societyId: string): Promise<void> {
         });
 
         // FIX: Event delegation — window.resetFlatRegistration global nahi
-        document.getElementById('residentsTableBody')?.addEventListener('click', async (e) => {
+        document.getElementById('residentsTableBody')?.addEventListener('click', async (e: Event) => {
             const btn = (e.target as Element).closest('[data-action="reset-flat"]') as HTMLElement | null;
             if (!btn) return;
             const flatId = btn.getAttribute('data-flat-id');
@@ -1240,7 +1240,7 @@ async function showStaffAttendancePage(societyId: string): Promise<void> {
         }
     };
 
-    dateInput?.addEventListener('change', (e) => loadAttendance((e.target as HTMLInputElement).value));
+    dateInput?.addEventListener('change', (e: Event) => loadAttendance((e.target as HTMLInputElement).value));
 
     exportBtn?.addEventListener('click', () => {
         requireFeature(planType, 'csv_export', () => {
