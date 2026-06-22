@@ -7,6 +7,8 @@ import { VisitorRecordsPage } from './pages/VisitorRecordsPage';
 import { ManageResidentsPage } from './pages/ManageResidentsPage';
 import { VisitorEntryPage } from './pages/VisitorEntryPage';
 import { StaffAttendancePage } from './pages/StaffAttendancePage';
+import { ManageStaffPage } from './pages/ManageStaffPage';
+
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 import { RefundPolicyPage } from './pages/RefundPolicyPage';
